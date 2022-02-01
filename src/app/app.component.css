@@ -1,0 +1,32 @@
+
+element.style {
+    padding: 20px 0px;
+}
+
+.navbar__cover {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 0.5rem;
+    border-bottom: 1px solid #cccc;
+    padding: '20px 0'
+}
+
+.navbar__iconmain {
+    padding-left: 2rem;
+    display: flex;
+}
+
+.name__class{
+    display: flex;
+    align-items: center
+}
+
+.po{
+    cursor: pointer;
+     color: red;
+      padding: 0 20px
+}
+

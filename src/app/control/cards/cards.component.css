@@ -1,0 +1,50 @@
+.cards__cardCover {
+    position: relative;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.cards__info {
+    position: absolute;
+    padding-top: 5rem;
+    padding-left: 1rem;
+    top: 1rem;
+    left: 1rem;
+    z-index: 100;
+    color: #ffffff;
+}
+
+.cards__mainheader {
+    width: 182px;
+    height: 80px;
+    font-family: "BentonSans-Bold";
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: -0.04px;
+    color: #FFFFFF;
+}
+
+.cards__maininfo {
+    font-family: "BentonSans-Light";
+    font-size: 20px;
+    line-height: 140%;
+    color: #FFFFFF;
+    opacity: 0.8;
+    width: 183px;
+    height: 56px;
+}
+
+.cards__select {
+    font-family: "BentonSans-Medium";
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 2rem;
+    text-align: right;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 0.5rem 1rem;
+    margin-left: 7rem;
+}
+

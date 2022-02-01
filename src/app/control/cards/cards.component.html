@@ -1,0 +1,13 @@
+<div class="cards__cardItem">
+    <div class="cards__cardCover" >
+        <img [src]="icon" alt="Logo" class="cards__image"/>
+        <div class="cards__info">
+            <div class="cards__mainheader">{{title}} </div>
+            <div class="cards__maininfo">{{info}}</div>
+            <a [routerLink]="link">
+                <div class="cards__select">{{select}}</div>
+            </a>
+           
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+.cards__coverage {
+    margin: 3.5rem auto;
+    width: 1000px;
+}
+
+.cards__header {
+    font-family: "BentonSans-Bold";
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 26px;
+    text-align: justify;
+    color: rgba(0, 51, 171, 0.85);
+}
+
+.cards__flex {
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}

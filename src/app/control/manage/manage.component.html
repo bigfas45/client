@@ -1,0 +1,40 @@
+<div class="ui container mrg">
+    <table class="ui compact celled definition table">
+        <thead class="full-width">
+            <tr>
+                
+                <th>App Name</th>
+                <th>App URL</th>
+                <th>App Menu Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let control of controls">
+              
+                <td> {{control.appName}} </td>
+                <td>{{control.appURL}}</td>
+                <td>{{control.appMenuName}}</td>
+                <td class="collapsing">
+                    <div class="ui fitted">
+                        <i class="edit icon"></i>
+                    </div>
+                </td>
+            </tr>
+
+
+        </tbody>
+        <tfoot class="full-width">
+            <tr>
+                <th></th>
+                <th colspan="4">
+                    <div class="ui right floated small primary labeled icon button" (click)="openDialog()">
+                        <i class="user icon" ></i> Add Control
+                        
+                    </div>
+
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
