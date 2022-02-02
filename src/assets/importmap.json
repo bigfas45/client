@@ -1,0 +1,11 @@
+{
+    "imports": {
+        "@single-spa/angular": "http://localhost:5201/main.js",
+        "@single-spa/angular2": "http://localhost:5202/main.js",
+        "@single-spa/angular3": "http://localhost:5203/main.js",
+        "@single-spa/angular4": "http://localhost:5204/main.js",
+        "@single-spa/react": "http://localhost:8081/stanbic-mf-authentiation.js",
+        "@single-spa/react2": "http://localhost:8080/stanbic-mf-authentiation.js",
+        "@Stanbic/root-config": "//localhost:9000/Stanbic-root-config.js"
+    }
+}
