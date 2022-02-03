@@ -19,22 +19,22 @@ export class ModalUpdateComponent implements OnInit {
     appName: new FormControl(this.data.dataKey.appName, [
       Validators.required,
       Validators.minLength(3),
-      Validators.maxLength(20),
+      Validators.maxLength(100),
     ]),
     appURL: new FormControl(this.data.dataKey.appURL, [
       Validators.required,
       Validators.minLength(4),
-      Validators.maxLength(20),
+      Validators.maxLength(100),
     ]),
     appMenuName: new FormControl(this.data.dataKey.appMenuName, [
       Validators.required,
       Validators.minLength(4),
-      Validators.maxLength(20),
+      Validators.maxLength(100),
     ]),
     appRoute: new FormControl(this.data.dataKey.appRoute, [
       Validators.required,
       Validators.minLength(4),
-      Validators.maxLength(20),
+      Validators.maxLength(100),
     ]),
   })
   constructor(private controlService: ControlService, @Inject(MAT_DIALOG_DATA) public data: any, public dialog: MatDialog) { }
