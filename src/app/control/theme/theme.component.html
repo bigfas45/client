@@ -3,23 +3,21 @@
         <thead class="full-width">
             <tr>
                 
-                <th>App Name</th>
-                <th>App URL</th>
-                <th>App Menu Name</th>
-                <th>App Route</th>
+                <th>ID</th>
+                <th>Style Name</th>
+                
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let control of controls">
+            <tr *ngFor="let theme of themes">
               
-                <td> {{control.appName}} </td>
-                <td>{{control.appURL}}</td>
-                <td>{{control.appMenuName}}</td>
-                <td>{{control.appRoute}}</td>
+                <td> {{theme.id}} </td>
+                <td>{{theme.name}}</td>
+               
                 <td class="collapsing">
                     <div class="ui fitted">
-                        <i class="edit icon" (click)="openUpdateDialog(control)"></i>
+                      <a [routerLink]="['/theme', theme.id]"><i class="edit icon" ></i></a>  
                     </div>
                 </td>
             </tr>
@@ -27,7 +25,7 @@
 
         </tbody>
         <tfoot class="full-width">
-            <tr>
+            <!-- <tr>
                 <th></th>
                 <th colspan="4">
                     <div class="ui right floated small primary labeled icon button" (click)="openDialog()">
@@ -36,7 +34,7 @@
                     </div>
 
                 </th>
-            </tr>
+            </tr> -->
         </tfoot>
     </table>
 </div>

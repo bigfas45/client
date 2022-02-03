@@ -1,0 +1,20 @@
+<div class="ui container mrg">
+<div class="ui form">
+<div class="field">
+    <div *ngFor="let dataKey_ of dataKey">
+        <div class="two fields">
+            <div class="field">
+              <input type="text" name="shipping[first-name]" [value]="dataKey_">
+            </div>
+            <div class="field">
+              <input type="text" name="shipping[last-name]" placeholder="Last Name" [value]="data[dataKey_]">
+            </div>
+          </div>
+
+     
+       
+      </div>
+
+</div>
+</div>
+</div>

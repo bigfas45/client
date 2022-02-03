@@ -1,6 +1,7 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input, Output } from '@angular/core';
 import { ControlService } from '../control.service';
 import { ModalComponent } from 'src/app/modal/modal.component';
+import { ModalUpdateComponent } from 'src/app/modal-update/modal-update.component';
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 
 @Component({
@@ -11,14 +12,18 @@ import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 export class ManageComponent implements OnInit {
   @Input() controls = [] as any
 
+  @Input() controlById = [] as any
 
+  @Input() id:any
   
   constructor(private controlService: ControlService, public dialog: MatDialog) { 
-    this.fetchControl()
+    this.fetchControl();
+ 
+  
   }
 
 
-  ngOnInit(): void {
+  ngOnInit() {
     
   }
 
@@ -30,10 +35,30 @@ export class ManageComponent implements OnInit {
 
 
 
+
+
   openDialog(){
     const newControl = this.dialog.open(ModalComponent, {
-      height: '400px',
+      height: '450px',
       width: '500px',
+    });
+
+    newControl.afterClosed().subscribe((res: any) => {
+      this.fetchControl();
+    })
+  }
+
+  openUpdateDialog(control: any){
+
+
+ 
+  
+    const newControl = this.dialog.open(ModalUpdateComponent, {
+      height: '450px',
+      width: '500px',
+      data:{
+        dataKey: control
+      }
     });
 
     newControl.afterClosed().subscribe((res: any) => {

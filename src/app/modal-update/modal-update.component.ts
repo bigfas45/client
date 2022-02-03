@@ -1,42 +1,46 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Inject } from '@angular/core';
 import { ControlService } from '../control/control.service';
-import { Router } from '@angular/router';
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 
+
+
 @Component({
-  selector: 'app-modal',
-  templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css']
+  selector: 'app-modal-update',
+  templateUrl: './modal-update.component.html',
+  styleUrls: ['./modal-update.component.css']
 })
-export class ModalComponent implements OnInit {
+export class ModalUpdateComponent implements OnInit {
+  @Input() controlData : any;
 
   controlForm = new FormGroup({
-    appName: new FormControl('', [
+    appName: new FormControl(this.data.dataKey.appName, [
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),
     ]),
-    appURL: new FormControl('', [
+    appURL: new FormControl(this.data.dataKey.appURL, [
       Validators.required,
       Validators.minLength(4),
       Validators.maxLength(20),
     ]),
-    appMenuName: new FormControl('', [
+    appMenuName: new FormControl(this.data.dataKey.appMenuName, [
       Validators.required,
       Validators.minLength(4),
       Validators.maxLength(20),
     ]),
-    appRoute: new FormControl('', [
+    appRoute: new FormControl(this.data.dataKey.appRoute, [
       Validators.required,
       Validators.minLength(4),
       Validators.maxLength(20),
     ]),
   })
-
-  constructor(private controlService: ControlService, private router: Router, public dialog: MatDialog) { }
+  constructor(private controlService: ControlService, @Inject(MAT_DIALOG_DATA) public data: any, public dialog: MatDialog) { }
 
   ngOnInit(): void {
+  
   }
 
   onSubmit(){
@@ -44,7 +48,7 @@ export class ModalComponent implements OnInit {
       return;
     }
 
-    this.controlService.controlADD(this.controlForm.value).subscribe({
+    this.controlService.controlUpdate(this.controlForm.value, this.data.dataKey.id).subscribe({
       next: () => {
         this.dialog.closeAll();
        
@@ -58,5 +62,4 @@ export class ModalComponent implements OnInit {
 
   
   }
-
 }

@@ -1,11 +1,12 @@
-<h2 mat-dialog-title>Create App Control</h2>
+<h2 mat-dialog-title>Update App Control</h2>
 <form (ngSubmit)="onSubmit()" class="ui form" [formGroup]="controlForm"> 
 <mat-dialog-content>
     
         <app-input inputType="text" label="App Name" [control]="controlForm.get('appName')" ></app-input>
         <app-input inputType="text" label="App URL" [control]="controlForm.get('appURL')" ></app-input>
-        <app-input inputType="text" label="App pMenu Name" [control]="controlForm.get('appMenuName')" ></app-input>
-        <app-input inputType="text" label="App Route Name" [control]="controlForm.get('appRoute')" ></app-input>
+        <app-input inputType="text" label="Ap pMenu Name" [control]="controlForm.get('appMenuName')" ></app-input>
+        <app-input inputType="text" label="App Route" [control]="controlForm.get('appRoute')" ></app-input>
+
        
        
 
@@ -13,8 +14,10 @@
 
 <mat-dialog-actions>
     <button  class="ui submit button primary">
-        Submit
+        Update
     </button>
 </mat-dialog-actions>
+
+
 </form>
 
