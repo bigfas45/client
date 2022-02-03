@@ -20,7 +20,7 @@ export class ModalComponent implements OnInit {
     appURL: new FormControl('', [
       Validators.required,
       Validators.minLength(4),
-      Validators.maxLength(20),
+      Validators.maxLength(60),
     ]),
     appMenuName: new FormControl('', [
       Validators.required,
