@@ -6,7 +6,7 @@ import { tap } from 'rxjs/operators'
   providedIn: 'root'
 })
 export class ControlService {
-  rootUrl = 'http://143.198.184.62/api';
+  rootUrl = 'http://localhost:3000/api';
   constructor(private http: HttpClient) { }
 
 
