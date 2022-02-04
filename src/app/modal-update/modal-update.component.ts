@@ -32,7 +32,6 @@ export class ModalUpdateComponent implements OnInit {
       Validators.maxLength(100),
     ]),
     appRoute: new FormControl(this.data.dataKey.appRoute, [
-      Validators.required,
       Validators.minLength(4),
       Validators.maxLength(100),
     ]),

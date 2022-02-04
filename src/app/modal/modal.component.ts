@@ -28,7 +28,7 @@ export class ModalComponent implements OnInit {
       Validators.maxLength(100),
     ]),
     appRoute: new FormControl('', [
-      Validators.required,
+     
       Validators.minLength(4),
       Validators.maxLength(100),
     ]),
