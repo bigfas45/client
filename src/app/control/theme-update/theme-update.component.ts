@@ -12,6 +12,8 @@ export class ThemeUpdateComponent implements OnInit {
 
   @Input() data = [] as any
   @Input() dataKey = [] as any
+  @Input() dataWhite = [] as any
+  @Input() dataWhiteKey = [] as any
 
   constructor(private controlService: ControlService, private route:ActivatedRoute) {
    
@@ -30,6 +32,9 @@ export class ThemeUpdateComponent implements OnInit {
       next: (response: any) =>{
         this.data = response.style["html[data-theme='dark']"];
         this.dataKey = Object.keys(this.data)
+
+        this.dataWhite = response.style["html[data-theme='white']"];
+        this.dataWhiteKey = Object.keys(this.dataWhite)
       },
     })
   }
