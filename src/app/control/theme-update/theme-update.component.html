@@ -27,8 +27,8 @@
               <input type="text" [value]="dataWhiteKey_" hidden>
             </div>
             <div class="field">
-              <input type="text" #colourCodeWhite (change)="colourPickerWhite.value = colourCodeWhite.value"  placeholder="Last Name"  [value]="data[dataWhiteKey_]">
-              <input style="border: none; padding: 0;" type="color" #colourPickerWhite (input)="colourCodeWhite.value = colourPickerWhite.value" [value]="data[dataWhiteKey_]">
+              <input type="text" #colourCodeWhite (change)="colourPickerWhite.value = colourCodeWhite.value"  placeholder="Last Name"  [value]="dataWhite[dataWhiteKey_]">
+              <input style="border: none; padding: 0;" type="color" #colourPickerWhite (input)="colourCodeWhite.value = colourPickerWhite.value" [value]="dataWhite[dataWhiteKey_]">
             </div>
           </div>
       </div>

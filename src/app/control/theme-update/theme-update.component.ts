@@ -12,6 +12,7 @@ export class ThemeUpdateComponent implements OnInit {
 
   @Input() data = [] as any
   @Input() dataKey = [] as any
+
   @Input() dataWhite = [] as any
   @Input() dataWhiteKey = [] as any
 
@@ -30,11 +31,15 @@ export class ThemeUpdateComponent implements OnInit {
   fetchControlById(id: any){
     this.controlService.controlTheme(id).subscribe({
       next: (response: any) =>{
+        // black
         this.data = response.style["html[data-theme='dark']"];
         this.dataKey = Object.keys(this.data)
 
+        // white
         this.dataWhite = response.style["html[data-theme='white']"];
         this.dataWhiteKey = Object.keys(this.dataWhite)
+
+        console.log( this.dataWhite);
       },
     })
   }
