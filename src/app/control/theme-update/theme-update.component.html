@@ -1,42 +1,38 @@
 <div class="ui container mrg">
 <div class="ui form">
 <div class="field">
-  <div class="two fields">
-    <div class="field">
-      <label>Dark</label>
-      <div *ngFor="let dataKey_ of dataKey">
-      
-        <div class="two fields">
-            <div class="field">
-              <input type="text" name="shipping[first-name]" [value]="dataKey_">
-            </div>
-            <div class="field">
-              <input type="text" #colourCode (change)="colourPicker.value = colourCode.value"  placeholder="Last Name"  [value]="data[dataKey_]">
-              <input style="border: none; padding: 0;" type="color" #colourPicker (input)="colourCode.value = colourPicker.value" [value]="data[dataKey_]">
-            </div>
-          </div>
-      </div>
-    </div>
- 
-    <div class="field">
-      <label>White</label>
-          <div *ngFor="let dataWhiteKey_ of dataWhiteKey">
-        
-        <div class="one fields">
-            <div class="field">
-              <input type="text" [value]="dataWhiteKey_" hidden>
-            </div>
-            <div class="field">
-              <input type="text" #colourCodeWhite (change)="colourPickerWhite.value = colourCodeWhite.value"  placeholder="Last Name"  [value]="dataWhite[dataWhiteKey_]">
-              <input style="border: none; padding: 0;" type="color" #colourPickerWhite (input)="colourCodeWhite.value = colourPickerWhite.value" [value]="dataWhite[dataWhiteKey_]">
-            </div>
-          </div>
-      </div>
-      </div>
 
-      </div>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Dark</th>
+      <th>Light</th>
+    </tr>
+  </thead>
 
-
+  <tbody>
+    <tr *ngFor="let theme of themeDataSet">
+      <td>
+        <label class="field">
+          <input [value]="theme.name" type="text" placeholder="CSS Colour Name">
+        </label>
+      </td>
+      <td>
+        <label class="field">
+          <input [value]="theme.dark" type="text" #darkColourCode (change)="darkColourCode.value = darkColourPicker.value"  placeholder="Last Name">
+          <input [value]="theme.dark" style="border: none; padding: 0;" type="color" #darkColourPicker (input)="darkColourCode.value = darkColourPicker.value">
+        </label>
+      </td>
+      <td>
+        <label class="field">
+          <input [value]="theme.light" type="text" #lightColourCode (change)="lightColourCode.value = lightColourPicker.value"  placeholder="Last Name">
+          <input [value]="theme.light" style="border: none; padding: 0;" type="color" #lightColourPicker (input)="lightColourCode.value = lightColourPicker.value">
+        </label>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 </div>
 </div>
