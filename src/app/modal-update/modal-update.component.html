@@ -1,23 +1,59 @@
 <h2 mat-dialog-title>Update App Control</h2>
-<form (ngSubmit)="onSubmit()" class="ui form" [formGroup]="controlForm"> 
 <mat-dialog-content>
-    
+<form (ngSubmit)="onSubmit()" class="ui form" [formGroup]="controlForm"> 
+
         <app-input inputType="text" label="App Name" [control]="controlForm.get('appName')" ></app-input>
         <app-input inputType="text" label="App URL" [control]="controlForm.get('appURL')" ></app-input>
         <app-input inputType="text" label="Ap pMenu Name" [control]="controlForm.get('appMenuName')" ></app-input>
-        <app-input inputType="text" label="App Route" [control]="controlForm.get('appRoute')" ></app-input>
+        <app-input inputType="text" label="App Route" [control]="controlForm.get('appRoute')" ></app-input>   
+    
+          <button  class="ui submit button primary">
+              Update
+          </button>
+<br /><br />
+<hr />
+</form>
+<div class="ui label">
+    <label> Sub Features </label>
+</div>
+<br /><br />
+<form (ngSubmit)="controlFeaturesData ? updateSubControl(featureId) : onSubmitSubFeatureApp() " class="ui form" [formGroup]="controlSubFeatureForm"> 
+<app-input inputType="text" label="Sub Feature Name" [control]="controlSubFeatureForm.get('subFeatureName')" ></app-input>
+<app-input inputType="text" label="Sub Feature Route" [control]="controlSubFeatureForm.get('subFeatureRoute')" ></app-input>
 
-       
-       
+<button  class="ui submit button primary">
+ {{controlFeaturesData ? 'Edit ' : 'Add' }} Feature
+</button>
+</form>
+<table class="ui basic table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let control of controlData2">
+      <td>{{control.subFeatureName}}</td>
+      <td>  {{control.subFeatureRoute}}</td>
+      <td class="collapsing">
+        <div class="ui fitted">
+            <i class="edit icon"(click)="GetSubControl(control.id)" ></i>
+        </div>
+    </td>
+    </tr>
 
+
+
+  </tbody>
+</table>
 </mat-dialog-content>
 
-<mat-dialog-actions>
-    <button  class="ui submit button primary">
-        Update
-    </button>
-</mat-dialog-actions>
 
 
-</form>
+
+
+
+
 

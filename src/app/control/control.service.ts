@@ -33,8 +33,37 @@ export class ControlService {
     )
   }
 
+
+  controlFeaturesAdd(data: any, id: any){
+    return this.http.post(`${this.rootUrl}/control/${id}`, data).pipe(
+      tap((response) => {
+      })
+    )
+  }
+
+  fetchFeatures( id: any){
+    return this.http.get(`${this.rootUrl}/feature/${id}`).pipe(
+      tap((response) => {
+        
+      })
+    )
+  }
   controlUpdate(credentials: any, id: any) {
     return this.http.put(`${this.rootUrl}/control/${id}`, credentials).pipe(
+      tap((response) => {
+      })
+    )
+  }
+
+  controlSubFeaturesUpdate(credentials: any, id: any) {
+    return this.http.put(`${this.rootUrl}/feature/${id}`, credentials).pipe(
+      tap((response) => {
+      })
+    )
+  }
+
+  fetchAllSUbFeatureByControlId(id: any){
+    return this.http.get(`${this.rootUrl}/features/${id}`).pipe(
       tap((response) => {
       })
     )

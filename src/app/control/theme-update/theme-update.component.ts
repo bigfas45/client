@@ -31,6 +31,9 @@ export class ThemeUpdateComponent implements OnInit {
   fetchControlById(id: any){
     this.controlService.controlTheme(id).subscribe({
       next: (response: any) =>{
+
+        console.log(response)
+
         // black
         this.data = response.style["html[data-theme='dark']"];
         this.dataKey = Object.keys(this.data)
@@ -39,7 +42,7 @@ export class ThemeUpdateComponent implements OnInit {
         this.dataWhite = response.style["html[data-theme='white']"];
         this.dataWhiteKey = Object.keys(this.dataWhite)
 
-        console.log( this.dataWhite);
+       
       },
     })
   }

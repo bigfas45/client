@@ -10,12 +10,14 @@ import {MatDialogModule, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 import { ModalUpdateComponent } from './modal-update/modal-update.component';
+import { FeatureModalComponent } from './feature-modal/feature-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ModalComponent,
     ModalUpdateComponent,
+    FeatureModalComponent,
     
   ],
   imports: [

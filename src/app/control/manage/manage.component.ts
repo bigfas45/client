@@ -18,18 +18,17 @@ export class ManageComponent implements OnInit {
   
   constructor(private controlService: ControlService, public dialog: MatDialog) { 
     this.fetchControl();
- 
-  
   }
 
-
   ngOnInit() {
-    
+   
   }
 
    fetchControl(){
-    this.controlService.control().subscribe((response) => {
+    this.controlService.control().subscribe((response: any) => {
+ 
       this.controls = response
+      
     })
   }
 
@@ -39,7 +38,7 @@ export class ManageComponent implements OnInit {
 
   openDialog(){
     const newControl = this.dialog.open(ModalComponent, {
-      height: '450px',
+      height: '650px',
       width: '500px',
     });
 
@@ -50,12 +49,10 @@ export class ManageComponent implements OnInit {
 
   openUpdateDialog(control: any){
 
-
- 
   
     const newControl = this.dialog.open(ModalUpdateComponent, {
-      height: '450px',
-      width: '500px',
+      height: '750px',
+      width: '600px',
       data:{
         dataKey: control
       }

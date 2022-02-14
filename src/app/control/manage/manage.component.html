@@ -6,6 +6,7 @@
                 <th>App Name</th>
                 <th>App URL</th>
                 <th>App Menu Name</th>
+                <th>App Icon</th>
                 <th>App Route</th>
                 <th></th>
             </tr>
@@ -13,18 +14,17 @@
         <tbody>
             <tr *ngFor="let control of controls">
               
-                <td> {{control.appName}} </td>
-                <td>{{control.appURL}}</td>
-                <td>{{control.appMenuName}}</td>
-                <td>{{control.appRoute}}</td>
+                <td> {{control.con.appName}} </td>
+                <td>{{control.con.appURL}}</td>
+                <td>{{control.con.appMenuName}}</td>
+                <td>{{control.con.appIcons}}</td>
+                <td>{{control.con.appRoute}}</td>
                 <td class="collapsing">
                     <div class="ui fitted">
                         <i class="edit icon" (click)="openUpdateDialog(control)"></i>
                     </div>
                 </td>
             </tr>
-
-
         </tbody>
         <tfoot class="full-width">
             <tr>
@@ -32,9 +32,7 @@
                 <th colspan="4">
                     <div class="ui right floated small primary labeled icon button" (click)="openDialog()">
                         <i class="user icon" ></i> Add Control
-                        
                     </div>
-
                 </th>
             </tr>
         </tfoot>
